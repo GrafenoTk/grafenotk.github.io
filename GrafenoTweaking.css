@@ -60,7 +60,7 @@
   background: #000;
   padding-top: 10px;
 } 
-p.a{
+p.a1{
   color: #9E00FF; 
   font-family: "Courier";
   font-size: 20px;
@@ -70,10 +70,10 @@ p.a{
   width: 30em;
   animation: type 4s steps(60, end); 
 }
-p.a:nth-child(2){
+p.a1:nth-child(2){
   animation: type2 8s steps(60, end);
 }
-p a{
+p a1{
   color: lime;
   text-decoration: none;
 }
