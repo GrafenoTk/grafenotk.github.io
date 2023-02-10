@@ -1,2 +1,0 @@
-# grafenotk.github.io
-GrafenoTweakingOficial
