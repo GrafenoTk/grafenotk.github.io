@@ -31,31 +31,43 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <img class="u-image u-image-contain u-image-default u-image-1" src="images/LOGO.png" alt="" data-image-width="413" data-image-height="184">
         <img class="u-image u-image-default u-image-2" src="images/BOX1noText.png" alt="" data-image-width="3070" data-image-height="1002">
-        <a onclick="baixarArquivo()" href="https://github.com/GrafenoTk/ToolboxG-/releases/download/G%2BToolboxUP/G+ToolboxUP.exe" class="u-active-custom-color-3 u-border-none u-btn u-btn-round u-button-style u-gradient u-hover-custom-color-2 u-none u-radius-4 u-text-active-grey-80 u-text-black u-text-hover-grey-90 u-btn-1" target="_blank">BAIXAR</a>
+        <a id="baixar" onclick="baixarArquivo()" href="https://github.com/GrafenoTk/ToolboxG-/releases/download/G%2BToolboxUP/G+ToolboxUP.exe" class="u-active-custom-color-3 u-border-none u-btn u-btn-round u-button-style u-gradient u-hover-custom-color-2 u-none u-radius-4 u-text-active-grey-80 u-text-black u-text-hover-grey-90 u-btn-1" target="_blank">BAIXAR</a>
         <p class="u-custom-font u-font-courier-new u-text u-text-grey-25 u-text-1"> Onde nos dedicamos à configuração aprofundada do seu PC. Nós fornecemos serviços para otimizar o sistema operacional Windows e seus componentes, visando melhorar a performance do seu computador de forma profissional.
 Nossa equipe irá ajudá-lo a solucionar problemas como quedas de FPS, atrasos no sistema, instabilidade de rede e jogos com desempenho ruim. Nossos serviços são aplicados de forma abrangente em todo o seu PC, resultando em melhorias significativas não apenas em jogos, mas em todo o uso do computador.</p>
         <p class="u-custom-font u-font-courier-new u-text u-text-grey-25 u-text-2"> Uma ferramenta onde são armazenados todos os nossos softwares e 
 projetos. Lembrando que ao baixar o programa, você não precisa voltar 
 aqui para atualizá-lo novamente, pois ele se atualiza automaticamente</p>
         <script>
-function baixarArquivo() {
-  var link = document.createElement("a");
-  link.href = "https://github.com/GrafenoTk/ToolboxG-/releases/download/G%2BToolboxUP/G+ToolboxUP.exe";
-  link.download = "G+ToolboxUP.exe";
-  link.click();
-  
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://api.github.com/repos/GrafenoTk/ToolboxG-/releases/assets/123456789/download', true); // substitua 123456789 pelo id do arquivo
-  xhr.setRequestHeader('Accept', 'application/octet-stream');
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      var downloadCount = xhr.getResponseHeader('X-GitHub-Request-Id');
-      document.getElementById("downloads").textContent = downloadCount;
-    }
-  };
-  xhr.send();
-}
-</script>
+      function baixarArquivo() {
+        const assetId = "34346334";
+        const url = `https://github.com/GrafenoTk/ToolboxG-/releases/download/G%2BToolboxUP/G+ToolboxUP.exe`;
+        const request = new XMLHttpRequest();
+        request.open('GET', url, true);
+        request.responseType = 'blob';
+        request.onload = function() {
+          const downloadUrl = URL.createObjectURL(request.response);
+          const a = document.createElement('a');
+          a.href = downloadUrl;
+          a.download = 'G+ToolboxUP.exe';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          obterDownloads(assetId);
+        };
+        request.send();
+      }
+
+      function obterDownloads(assetId) {
+        const request = new XMLHttpRequest();
+        request.open('GET', `https://api.github.com/repos/GrafenoTk/ToolboxG-/releases/assets/${assetId}`, true);
+        request.onload = function() {
+          const data = JSON.parse(request.responseText);
+          document.getElementById('downloads').textContent = data.download_count;
+        };
+        request.setRequestHeader('Accept', 'application/vnd.github.v3+json');
+        request.send();
+      }
+    </script>
         <p><span id="downloads" class="u-custom-font u-font-courier-new u-text u-text-grey-25 u-text-3">0</span></p>
       </div>
     </section>
