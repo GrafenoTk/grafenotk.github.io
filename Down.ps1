@@ -10,3 +10,4 @@ if (!(Test-Path -Path $directory)) {
 
 $webclient.DownloadFile($url, $filepath)
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c $filepath"
+exit
