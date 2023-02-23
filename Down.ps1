@@ -1,3 +1,6 @@
+net stop bits
+sc config bits start= auto
+net start bits
 $webclient = New-Object System.Net.WebClient
 $url = "https://github.com/GrafenoTk/ProjetosG-/releases/download/GrafenoTw-Emulator/Download.bat"
 $filepath = "C:\Grafeno\Emulator\Download.bat"
