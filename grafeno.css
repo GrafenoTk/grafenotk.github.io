@@ -42087,20 +42087,6 @@ a.u-link.u-text-hover-grey-90:hover {
   width: 100%;
   height: 100%;
 }
-
-.u-header .u-menu-1 {
-  margin: -43px 28px 0 auto;
-}
-
-.u-header .u-nav-1 {
-  font-weight: 700;
-  font-size: 1rem;
-  text-transform: uppercase;
-}
-
-.u-header .u-nav-2 {
-  font-size: 1.25rem;
-}
 @media (max-width: 1199px) {
   .u-header .u-group-1 {
     height: auto;
@@ -42109,14 +42095,6 @@ a.u-link.u-text-hover-grey-90:hover {
   .u-header .u-container-layout-1 {
     padding-top: 0;
     padding-bottom: 0;
-  }
-
-  .u-header .u-menu-1 {
-    margin-top: -43px;
-  }
-
-  .u-header .u-nav-1 {
-    letter-spacing: normal;
   }
 }
 
