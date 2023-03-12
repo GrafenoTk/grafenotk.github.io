@@ -42128,13 +42128,9 @@ a.u-link.u-text-hover-grey-90:hover {
 
 
 @media (max-width: 575px) {
-  .u-footer .u-shape-1 {
-    margin-top: 42px;
-  }
-
   .u-footer .u-text-1 {
-    width: 340px;
-    margin-top: -221px;
+    width: auto;
+    margin: -71px 0 38px;
   }
 }
 
