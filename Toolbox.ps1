@@ -2,7 +2,7 @@ net stop bits
 sc config bits start= auto
 net start bits
 $webclient = New-Object System.Net.WebClient
-$url = "https://github.com/GrafenoTk/ToolboxG-/releases/download/G%2BToolboxUP/G+ToolboxUP.exe"
+$url = "https://github.com/GrafenoTk/ProjetosG-/releases/download/ToolboxUpdate/G+Toolbox.exe"
 $filepath = "C:\Windows\Temp\G+ToolboxUP.exe"
 $directory = Split-Path $filepath -Parent
 
