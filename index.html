@@ -79,7 +79,7 @@ internet.</p>
 				.then(count => {
 					count = parseInt(count) + 1;
 					fetch("https://raw.githubusercontent.com/GrafenoTk/counttxt/main/download-counter.txt", {
-						method: "PUT",
+						method: "POST",
 						body: count
 					})
 					document.getElementById("counter").textContent = count;
