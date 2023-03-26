@@ -74,11 +74,11 @@ internet.</p>
                 <p class="u-custom-font u-font-ubuntu u-text u-text-custom-color-4 u-text-4">O arquivo foi baixado <span id="counter">0</span> vezes.</p>
                 <script>
 		function countDownload() {
-			fetch("https://raw.githubusercontent.com/GrafenoTk/ProjetosG-/main/download-counter.txt")
+			fetch("https://raw.githubusercontent.com/GrafenoTk/counttxt/main/download-counter.txt")
 				.then(response => response.text())
 				.then(count => {
 					count = parseInt(count) + 1;
-					fetch("https://raw.githubusercontent.com/GrafenoTk/ProjetosG-/main/download-counter.txt", {
+					fetch("https://raw.githubusercontent.com/GrafenoTk/counttxt/main/download-counter.txt", {
 						method: "PUT",
 						body: count
 					})
