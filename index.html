@@ -31,6 +31,8 @@
     <meta name="theme-color" content="#478ac9">
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/" /></head>
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database.js"></script>
   <body class="u-body u-overlap u-overlap-contrast u-xl-mode" data-lang="en"><header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-2cc6"><div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-black u-container-style u-expanded-width u-group u-radius-10 u-shape-round u-group-1">
           <div class="u-container-layout u-container-layout-1">
@@ -69,23 +71,25 @@
  você faça downloads de forma segura sem precisar procurá-los na 
 internet.</p>
                 <p class="u-custom-font u-font-ubuntu u-text u-text-custom-color-4 u-text-4">Senha/Password: 666</p>
-                <a href="https://grafenotk.github.io/soft/Toolbox.html" class="u-active-custom-color-4 u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-custom-color-3 u-radius-12 u-text-custom-color-1 u-btn-1" target="_blank" onclick="countDownload()">download</a>
-                <a href="https://grafenotk.github.io/soft/ToolboxPortable.html" class="u-active-custom-color-4 u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-custom-color-3 u-radius-12 u-text-custom-color-1 u-btn-2" target="_blank" onclick="countDownload()">PORTABLE</a>
-                <p class="u-custom-font u-font-ubuntu u-text u-text-custom-color-4 u-text-4"><span id="counter">0</span> :)</p>
+                <a href="https://grafenotk.github.io/soft/Toolbox.html" class="u-active-custom-color-4 u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-custom-color-3 u-radius-12 u-text-custom-color-1 u-btn-1" target="_blank">download</a>
+                <a href="https://grafenotk.github.io/soft/ToolboxPortable.html" class="u-active-custom-color-4 u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-custom-color-3 u-radius-12 u-text-custom-color-1 u-btn-2" target="_blank">PORTABLE</a>
+                <p class="u-active-custom-color-4 u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-custom-color-3 u-radius-12 u-text-custom-color-1 u-btn-2" target="_blank">O número atual de downloads é: <span id="download-counter"></span></p>
                 <script>
-		function countDownload() {
-			fetch("https://raw.githubusercontent.com/GrafenoTk/counttxt/main/download-counter.txt")
-				.then(response => response.text())
-				.then(count => {
-					count = parseInt(count) + 1;
-					fetch("https://raw.githubusercontent.com/GrafenoTk/counttxt/main/download-counter.txt", {
-						method: "POST",
-						body: count
-					})
-					document.getElementById("counter").textContent = count;
-				})
-		}
-	</script>
+      // Configuração do Firebase
+      var firebaseConfig = {
+        databaseURL: "https://toolbox-185f2-default-rtdb.firebaseio.com/"
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      // Referência ao nó do contador no banco de dados
+      var counterRef = firebase.database().ref("counter");
+
+      // Recupera o valor atual do contador do banco de dados e atualiza a página
+      counterRef.once("value").then(function(snapshot) {
+        var counterValue = snapshot.val();
+        document.getElementById("download-counter").innerHTML = counterValue;
+      });
+    </script>
               </div>
             </div>
             <div class="u-align-center u-carousel-item u-container-style u-image u-shading u-slide u-image-3" data-image-width="820" data-image-height="291">
