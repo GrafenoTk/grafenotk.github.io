@@ -69,40 +69,9 @@
  você faça downloads de forma segura sem precisar procurá-los na 
 internet.</p>
                 <p class="u-custom-font u-font-ubuntu u-text u-text-custom-color-4 u-text-4">Senha/Password: 666</p>
-                <a href="https://grafenotk.github.io/soft/Toolbox.html" class="u-active-custom-color-4 u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-custom-color-3 u-radius-12 u-text-custom-color-1 u-btn-1" target="_blank">download</a>
-                <a href="https://grafenotk.github.io/soft/ToolboxPortable.html" class="u-active-custom-color-4 u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-custom-color-3 u-radius-12 u-text-custom-color-1 u-btn-2" target="_blank">PORTABLE</a>
-                <p>O número atual de downloads é: <span id="counter"></span></p>
-                <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
-                <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database.js"></script>
-                <script>
-                // Initialize Firebase
-                var config = {
-                databaseURL: "https://toolbox-185f2-default-rtdb.firebaseio.com/"
-                };
-                firebase.initializeApp(config);
-
-                // Get a reference to the counter node in the database
-                var counterRef = firebase.database().ref("contador");
-
-                // Get the current value of the counter and update the page
-                counterRef.once("value").then(function(snapshot) {
-                var count = snapshot.val();
-                updateCounter(count);
-                });
-
-                // Listen for changes to the counter node in the database and update the page
-                counterRef.on("value", function(snapshot) {
-                var count = snapshot.val();
-                updateCounter(count);
-                });
-
-                // Function to update the display of the counter on the page
-                function updateCounter(count) {
-                document.getElementById("counter").innerHTML = count;
-                }
-                </script>
-
-
+                <a href="https://grafenotweaking.blogspot.com/p/download.html" class="u-active-custom-color-4 u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-custom-color-3 u-radius-12 u-text-custom-color-1 u-btn-1" target="_blank">download</a>
+                <a href="https://grafenotweaking.blogspot.com/p/download.html" class="u-active-custom-color-4 u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-custom-color-3 u-radius-12 u-text-custom-color-1 u-btn-2" target="_blank">PORTABLE</a>
+                
               </div>
             </div>
             <div class="u-align-center u-carousel-item u-container-style u-image u-shading u-slide u-image-3" data-image-width="820" data-image-height="291">
