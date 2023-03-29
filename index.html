@@ -75,20 +75,31 @@ internet.</p>
                 <a href="https://grafenotk.github.io/soft/ToolboxPortable.html" class="u-active-custom-color-4 u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-custom-color-3 u-radius-12 u-text-custom-color-1 u-btn-2" target="_blank">PORTABLE</a>
                 <a>O número atual de downloads é: <span id="download-counter"></span></a>
                 <script>
-      // Configuração do Firebase
-      var firebaseConfig = {
+      // Initialize Firebase
+      var config = {
         databaseURL: "https://toolbox-185f2-default-rtdb.firebaseio.com/"
       };
-      firebase.initializeApp(firebaseConfig);
+      firebase.initializeApp(config);
 
-      // Referência ao nó do contador no banco de dados
+      // Get a reference to the counter node in the database
       var counterRef = firebase.database().ref("counter");
 
-      // Recupera o valor atual do contador do banco de dados e atualiza a página
+      // Get the current value of the counter and update the page
       counterRef.once("value").then(function(snapshot) {
-        var counterValue = snapshot.val();
-        document.getElementById("download-counter").innerHTML = counterValue;
+        var count = snapshot.val();
+        updateCounter(count);
       });
+
+      // Listen for changes to the counter node in the database and update the page
+      counterRef.on("value", function(snapshot) {
+        var count = snapshot.val();
+        updateCounter(count);
+      });
+
+      // Function to update the display of the counter on the page
+      function updateCounter(count) {
+        document.getElementById("counter").innerHTML = "Counter: " + count;
+      }
     </script>
               </div>
             </div>
