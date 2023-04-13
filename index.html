@@ -71,7 +71,43 @@ internet.</p>
                 <p class="u-custom-font u-font-ubuntu u-text u-text-custom-color-4 u-text-4">Senha/Password: 666</p>
                 <a href="https://grafenotk.blogspot.com/p/download.html" class="u-active-custom-color-4 u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-custom-color-3 u-radius-12 u-text-custom-color-1 u-btn-1" target="_blank">download</a>
                 <a href="https://grafenotk.blogspot.com/p/download.html" class="u-active-custom-color-4 u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-custom-color-3 u-radius-12 u-text-custom-color-1 u-btn-2" target="_blank">PORTABLE</a>
-                
+                <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+	<script>
+		var firebaseConfig = {
+			apiKey: "sua-api-key",
+			authDomain: "generatekey-9ade6.firebaseapp.com",
+			databaseURL: "https://generatekey-9ade6-default-rtdb.firebaseio.com",
+			projectId: "generatekey-9ade6",
+			storageBucket: "generatekey-9ade6.appspot.com",
+			messagingSenderId: "seu-messaging-sender-id",
+			appId: "seu-app-id"
+		};
+		firebase.initializeApp(firebaseConfig);
+
+		var database = firebase.database();
+		var downloadCountRef = database.ref('downloads');
+		
+		downloadCountRef.on('value', function(snapshot) {
+			var count = snapshot.val();
+			document.getElementById('downloadCount').innerHTML = 'Downloads: ' + count;
+		});
+		
+		function atualizarContador() {
+			downloadCountRef.transaction(function(currentCount) {
+				return (currentCount || 0) + 1;
+			}, function(error, committed, snapshot) {
+				if (error) {
+					console.log('Falha ao incrementar contador de downloads', error);
+				} else if (committed) {
+					console.log('Contador de downloads incrementado com sucesso');
+				}
+			});
+		}
+	</script>
+	<center>
+	<p id="downloadCount"></p>
+	</center>
               </div>
             </div>
             <div class="u-align-center u-carousel-item u-container-style u-image u-shading u-slide u-image-3" data-image-width="820" data-image-height="291">
