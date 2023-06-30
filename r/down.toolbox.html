@@ -1,0 +1,46 @@
+<html>
+<head>
+  <meta charset="UTF-8"></meta>
+  <title>Contador de 5 segundos</title>
+  <style>
+    /* Centraliza o texto verticalmente e horizontalmente */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    /* Define o estilo do texto */
+    p {
+      font-size: 1.2rem;
+      text-align: justify;
+      max-width: 600px;
+      line-height: 1.5;
+    }
+  </style>
+  <meta content="5; URL='https://linkvertise.com/670620/toolbox-optimizer-grafeno/1'" http-equiv="refresh"></meta>
+  <script>
+    // Inicia o contador de 5 segundos
+    let contador = 5;
+    setInterval(function() {
+      // Obtém a referência ao elemento de texto
+      const textoElemento = document.getElementById("texto");
+      
+      // Quando o contador chegar a zero, exibe o texto completo
+      if (contador === 0) {
+        textoElemento.innerHTML = "<center><p>O Toolbox Grafeno+Tweaking é uma ferramenta de armazenamento de projetos da Grafeno que utiliza a ferramenta Wget para fazer download de todos os projetos da Equipe diretamente de seus repositórios no GitHub. Com este software, é possível ter acesso fácil e rápido a todos os projetos da Grafeno, sem precisar perder tempo procurando por eles na internet.</p><p>Além disso, o Toolbox Grafeno+Tweaking garante a máxima segurança e integridade dos projetos, pois todos são baixados diretamente de fontes confiáveis. Dessa forma, você pode ter certeza de que está trabalhando com a versão mais atualizada e segura dos projetos da Grafeno.</p><p>Este software é perfeito para aqueles que desejam ter todos os projetos da Grafeno organizados em um só lugar, sem precisar perder tempo procurando na internet. Além disso, com a optimização do Windows para melhorar a experiência do usuário, você pode ter certeza de que terá uma ótima performance ao usar o Toolbox Grafeno+Tweaking.</p><p>Em resumo, o Toolbox Grafeno+Tweaking é uma ferramenta de armazenamento de projetos da Grafeno que garante a máxima segurança e integridade dos projetos, além de oferecer uma experiência de uso otimizada e agilidade no acesso aos projetos da Equipe.</p></center>";
+      } else {
+        // Exibe o texto com o contador de segundos
+        textoElemento.innerText = contador + " Aguarde...";
+        
+        // Decrementa o contador
+        contador--;
+      }
+    }, 1000); // Executa a cada 1 segundo
+  </script>
+</head>
+<body>
+  <center><h1 id="texto"></h1></center>
+</body>
+</html>
