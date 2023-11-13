@@ -10,17 +10,19 @@
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="grafeno.js" defer=""></script>
     <meta name="generator" content="iNINJAFPS">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
     
     <script>
-        if (window.innerWidth <= 768 && !window.matchMedia("(pointer: coarse)").matches) {
-            // Verifica se a largura da janela é menor ou igual a 768 pixels
-            // e se o dispositivo não tem um ponteiro de toque (indicativo de um dispositivo móvel)
-
-            document.body.innerHTML = '<div style="background-color: black; color: white; text-align: center; padding: 20px;">Coloque em modo computador para visualizar o site!</div>';
-        }
+        window.onload = function() {
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                // Se o usuário estiver em um dispositivo móvel
+                document.body.innerHTML = '<div style="background-color: black; color: white; text-align: center; padding: 20px;">Coloque em modo computador para visualizar o site!</div>';
+            }
+        };
     </script>
     
     
