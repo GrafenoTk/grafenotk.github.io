@@ -3,38 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Texto com Estilo</title>
+<title>Configs</title>
 <style>
     body {
         background-color: rgb(15, 3, 21);
         color: rgb(121, 5, 178);
         font-family: Arial, sans-serif;
     }
-    pre {
+    pre, p, ul {
         white-space: pre-wrap;
         font-size: 14px;
+    }
+    button {
+        background-color: rgb(15, 3, 21);
+        color: rgb(121, 5, 178);
+        padding: 10px 20px;
+        margin: 10px;
+        border: 2px solid rgb(121, 5, 178);
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: rgb(99, 3, 147);
+        border-color: rgb(99, 3, 147);
     }
 </style>
 </head>
 <body>
+<button onclick="showText1()">SENSIBILIDADE</button>
+<button onclick="showText2()">CONFIGURAÇÕES</button>
+<button onclick="showText3()">RESOLUÇÕES</button>
 
-<p>BASICAS:</p>
-<ul>
-  <li>0.950000</li>
-  <li>0.990000</li>
-  <li>0.930000</li>
-  <li>0.900000</li>
-  <li>0.910000</li>
-</ul>
+<div id="textContainer"></div>
 
-<p>EXPERTE:</p>
-<ul>
-  <li>3532916580.000000</li>
-  <li>934291658.000000</li>
-  <li>953291674.000000</li>
-  <li>16458.000000</li>
-  <li>508816474.000000</li>
-</ul>
+<script>
+function showText1() {
+    document.getElementById("textContainer").innerHTML = `
+        <pre>(SENSI BAIXA FAZ A MIRA TREMER MENOS!)
+SENSI 1       (EU USO)        SENSI 5             SENSI 9
+800X600                      800X600             800X600
+RANGE:934291658.000000       RANGE:0.95000       RANGE:94291658.000000
+GERAL:0                       GERAL:9             GERAL:0
+RED DOT:0                     RED DOT:3           RED DOT:0
+DPI DO MOUSE:800              DPI DO MOUSE:800    DPI DO MOUSE:800
 
+SENSI 2                       SENSI 6             SENSI 10 
+800X600                       800X600             800X600
+RANGE:0.930000                RANGE:0.99000       RANGE:934291658.000000
+GERAL:15                      GERAL:0             GERAL:0          
+RED DOT:0                     RED DOT:0           RED DOT:0
+DPI DO MOUSE:800              DPI DO MOUSE:800    DPI DO MOUSE:800
+        </pre>`;
+}
+
+function showText2() {
+    document.getElementById("textContainer").innerHTML = `
+        <pre>BASICAS:
+0.950000
+0.990000
+0.930000
+0.900000
+0.910000
+        
+EXPERTE:
+3532916580.000000
+934291658.000000
+953291674.000000
+16458.000000
+508816474.000000
+        </pre>`;
+}
+
+function showText3() {
+    document.getElementById("textContainer").innerHTML = `
+        <pre>(MELHORES RESOLUÇÕES SMARTGAGA)
+800X600
+640X480
+540X960
+960X540
+1024x768
+1600x900
+1280x720
+720x1280</pre>`;
+}
+</script>
 </body>
 </html>
