@@ -26,6 +26,22 @@
         background-color: rgb(99, 3, 147);
         border-color: rgb(99, 3, 147);
     }
+    .contentContainer {
+        display: flex;
+        align-items: flex-start;
+    }
+    #textContainer {
+        flex: 1;
+    }
+    #imageContainer {
+        margin-left: 20px;
+        cursor: pointer;
+    }
+    #imageContainer img {
+        max-width: 200px;
+        height: auto;
+        display: block;
+    }
 </style>
 </head>
 <body>
@@ -33,15 +49,18 @@
 <button onclick="showText2()">CONFIGURAÇÕES</button>
 <button onclick="showText3()">RESOLUÇÕES</button>
 
-<div id="textContainer"></div>
+<div class="contentContainer">
+    <div id="textContainer"></div>
+    <div id="imageContainer"></div>
+</div>
 
 <script>
 function showText1() {
     document.getElementById("textContainer").innerHTML = `
         <pre>(SENSI BAIXA FAZ A MIRA TREMER MENOS!)
-SENSI 1       (EU USO)        SENSI 5             SENSI 9
-800X600                      800X600             800X600
-RANGE:934291658.000000       RANGE:0.95000       RANGE:94291658.000000
+SENSI 1                       SENSI 5             SENSI 9
+800X600                       800X600             800X600
+RANGE:934291658.000000        RANGE:0.95000       RANGE:94291658.000000
 GERAL:0                       GERAL:9             GERAL:0
 RED DOT:0                     RED DOT:3           RED DOT:0
 DPI DO MOUSE:800              DPI DO MOUSE:800    DPI DO MOUSE:800
@@ -53,6 +72,8 @@ GERAL:15                      GERAL:0             GERAL:0
 RED DOT:0                     RED DOT:0           RED DOT:0
 DPI DO MOUSE:800              DPI DO MOUSE:800    DPI DO MOUSE:800
         </pre>`;
+    document.getElementById("imageContainer").innerHTML = '<img src="https://grafenotk.github.io/SwanSync/Config/Sensi.png" alt="Sensitivity Image" onclick="openFullScreenImage(this.src)">';
+
 }
 
 function showText2() {
@@ -71,6 +92,7 @@ EXPERTE:
 16458.000000
 508816474.000000
         </pre>`;
+    document.getElementById("imageContainer").innerHTML = '<img src="https://grafenotk.github.io/SwanSync/Config/main.png" alt="Configuration Image" onclick="openFullScreenImage(this.src)">';
 }
 
 function showText3() {
@@ -84,6 +106,33 @@ function showText3() {
 1600x900
 1280x720
 720x1280</pre>`;
+    document.getElementById("imageContainer").innerHTML = ''; // Remove any image
+}
+
+function openFullScreenImage(src) {
+    var modal = document.createElement('div');
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.zIndex = '9999';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+
+    var img = document.createElement('img');
+    img.src = src;
+    img.style.maxWidth = '90%';
+    img.style.maxHeight = '90%';
+    img.style.cursor = 'pointer';
+    img.onclick = function() {
+        modal.remove();
+    };
+
+    modal.appendChild(img);
+    document.body.appendChild(modal);
 }
 </script>
 </body>
