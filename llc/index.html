@@ -7,28 +7,27 @@
 <style>
   body {
     background-color: rgb(18, 20, 20); /* Fundo escuro */
-    text-align: center; /* Centraliza todo o texto */
-    margin: 0;
-    padding: 0;
+    color: #F9C216; /* Texto amarelo */
     font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    overflow-y: scroll;
+    scrollbar-color: #F9C216 rgb(15, 3, 21); /* Cor da barra de rolagem */
     user-select: none; /* Impede a seleção de texto */
   }
+  ::-webkit-scrollbar {
+    width: 12px;
+    border-radius: 8px; /* Adiciona bordas arredondadas à barra de rolagem */
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #F9C216;
+    border-radius: 8px; /* Adiciona bordas arredondadas ao polegar da barra de rolagem */
+  }
+  ::-webkit-scrollbar-track {
+    background-color: rgb(124, 96, 10);
+  }
   #license-text {
-    color: #F9C216; /* Texto amarelo */
-    width: 80%;
-    margin: 5% auto; /* Centraliza verticalmente */
-    padding: 20px; /* Espaçamento interno */
-    overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando o conteúdo excede a altura */
-  }
-  #license-text h1 {
-    font-size: 20px; /* Reduz o tamanho do título */
-    margin-top: 0; /* Remove a margem superior */
-    margin-bottom: 20px; /* Adiciona espaço após o título */
-  }
-  #license-text p {
-    margin: 0;
-    font-size: 14px; /* Reduz o tamanho do texto */
-    text-align: justify; /* Justifica o texto para uma melhor legibilidade */
+    text-align: center; /* Centraliza o texto */
   }
 </style>
 </head>
