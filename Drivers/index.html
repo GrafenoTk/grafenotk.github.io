@@ -1,50 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drivers3DP</title>
-</head>
-<center>
-<body>
-    <p>Clique no botão abaixo para ser redirecionado para o link do arquivo .exe.</p>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirecionando...</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 
-    <button id="redirectButton">DOWNLOAD</button>
+    .loading-text {
+        animation: pulse 1s infinite alternate;
+    }
+
+    @keyframes pulse {
+        0% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+</head>
+<body>
+    <div id="redirectMessage" class="loading-text">Redirecionando em 3s...</div>
 
     <script>
-        // Função para redirecionar para o link do arquivo .exe
-        function redirectToExeLink() {
-            // URL da página que contém o link para o arquivo .exe
-            var url = "https://www.3dpchip.com/3dp/chip_down_lite.php?pl=pt_br";
-
-            // Requisição HTTP para obter o conteúdo da página
-            fetch(url)
-                .then(response => response.text())
-                .then(data => {
-                    // Criar um elemento HTML temporário para extrair o link
-                    var tempElement = document.createElement("div");
-                    tempElement.innerHTML = data;
-
-                    // Encontrar o link para o arquivo .exe na página
-                    var exeLink = tempElement.querySelector("a[href$='.exe']");
-
-                    // Verificar se o link foi encontrado
-                    if (exeLink) {
-                        // Redirecionar para o link do arquivo .exe
-                        window.location.href = exeLink.href;
-                    } else {
-                        // Se o link não foi encontrado, exibir uma mensagem de erro
-                        console.error("Link para o arquivo .exe não encontrado.");
-                    }
-                })
-                .catch(error => {
-                    console.error("Erro ao carregar a página:", error);
-                });
-        }
-
-        // Adicionar um evento de clique ao botão
-        document.getElementById("redirectButton").addEventListener("click", redirectToExeLink);
+        // Redirecionamento após 3 segundos
+        setTimeout(function() {
+            window.location.href = "https://www.3dpchip.com/new/3DP_Chip_v2402.exe";
+        }, 3000);
     </script>
 </body>
-</center>
 </html>
