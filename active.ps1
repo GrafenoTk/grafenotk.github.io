@@ -3,8 +3,7 @@
 $ErrorActionPreference = "Stop"
 
 write-host
-Write-Host "The current command (irm https://massgrave.dev/get | iex) will be retired on Aug 31, 2024."
-Write-Host -ForegroundColor Green "Use the new command (irm https://get.activated.win | iex) moving forward."
+Write-Host -ForegroundColor Green "RuanD esteve por aqui hehehe"
 write-host
 
 # Enable TLSv1.2 for compatibility with older clients for current session
