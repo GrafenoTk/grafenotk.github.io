@@ -294,7 +294,8 @@ echo:                       ********  #****                  *################
 echo:                      *********  #****  ***#######  *#########*    *#####*                     
 echo:                     *****        #***  ***########*   *##**          *###                     
 echo:                    **              #*      ****######**                 *# 
-echo:                Ativador de Windows e Office, RuanD este por aqui...    
+color 2
+echo:                Ativador de Windows e Office, RuanD esteve por aqui...    
 timeout /t 3 >nul
 :MainMenu
 
