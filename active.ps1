@@ -26,7 +26,7 @@ catch {
 
 $rand = Get-Random -Maximum 99999999
 $isAdmin = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match 'S-1-5-32-544')
-$FilePath = if ($isAdmin) { "$env:SystemRoot\Temp\MAS_$rand.cmd" } else { "$env:TEMP\MAS_$rand.cmd" }
+$FilePath = if ($isAdmin) { "$env:SystemRoot\Temp\RuanD_$rand.cmd" } else { "$env:TEMP\RuanD_$rand.cmd" }
 
 $ScriptArgs = "$args "
 $prefix = "@::: $rand `r`n"
@@ -35,5 +35,5 @@ Set-Content -Path $FilePath -Value $content
 
 Start-Process $FilePath $ScriptArgs -Wait
 
-$FilePaths = @("$env:TEMP\MAS*.cmd", "$env:SystemRoot\Temp\MAS*.cmd")
+$FilePaths = @("$env:TEMP\RuanD*.cmd", "$env:SystemRoot\Temp\RuanD*.cmd")
 foreach ($FilePath in $FilePaths) { Get-Item $FilePath | Remove-Item }
