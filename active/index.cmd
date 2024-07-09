@@ -3,31 +3,11 @@
 @echo off
 
 
-
-::  For command line switches, check mass grave [.] dev/command_line_switches.html
-::  If you want to better understand script, read from MAS separate files version. 
-
-
-::============================================================================
-::
-::   Homepage: mass grave [.] dev
-::      Email: windowsaddict@protonmail.com
-::
-::============================================================================
-
-
-
-::========================================================================================================================================
-
-::  Set Path variable, it helps if it is misconfigured in the system
-
 set "PATH=%SystemRoot%\System32;%SystemRoot%\System32\wbem;%SystemRoot%\System32\WindowsPowerShell\v1.0\"
 if exist "%SystemRoot%\Sysnative\reg.exe" (
 set "PATH=%SystemRoot%\Sysnative;%SystemRoot%\Sysnative\wbem;%SystemRoot%\Sysnative\WindowsPowerShell\v1.0\;%PATH%"
 )
 
-:: Re-launch the script with x64 process if it was initiated by x86 process on x64 bit Windows
-:: or with ARM64 process if it was initiated by x86/ARM32 process on ARM64 Windows
 
 set "_cmdf=%~f0"
 for %%# in (%*) do (
@@ -294,6 +274,7 @@ echo:                       ********  #****                  *################
 echo:                      *********  #****  ***#######  *#########*    *#####*                     
 echo:                     *****        #***  ***########*   *##**          *###                     
 echo:                    **              #*      ****######**                 *# 
+timeout /t 3 >nul
 color 2
 echo:                Ativador de Windows e Office, RuanD esteve por aqui...    
 timeout /t 3 >nul
